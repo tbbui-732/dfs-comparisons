@@ -75,7 +75,7 @@ int memo_nosv_noref(
 }
 
 /* memoized recursion
- * string view
+ * std::string_view
  * no references used
  */
 int memo_sv_noref(
@@ -97,8 +97,11 @@ int memo_sv_noref(
     return res;
 }
 
-/*
-int dfs(
+/* memoized recursion
+ * std::string_view
+ * references used
+ */
+int memo_sv_ref(
         std::string_view text1, std::string_view text2,
         int i, int j, int n, int m,
         std::vector<std::vector<int>>& cache) {
