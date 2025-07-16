@@ -31,9 +31,28 @@ int longestCommonSubsequence(std::string text1, std::string text2) {
 }
 */
 
-/* Memoized recursion
- * String view
- * No references used
+/* naive recursion
+ * std::string
+ * no references used
+ */
+int worst(
+        const std::string& text1,
+        const std::string& text2,
+        int i, int j, int n, int m,
+        std::vector<std::vector<int>>& cache) {
+    if (i == n || j == m)
+        return 0; // unable to evaluate i == j
+    int res;
+    if (text1[i] == text2[j])
+        res = 1 + dfs(text1, text2, i+1, j+1, n, m, cache);
+    else
+        res = std::max(dfs(text1, text2, i+1, j, n, m, cache),
+                dfs(text1, text2, i, j+1, n, m, cache));
+    return res;
+}
+/* memoized recursion
+ * string view
+ * no references used
  */
 int memo_sv_noref(
         std::string_view text1,
