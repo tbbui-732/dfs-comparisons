@@ -35,7 +35,7 @@ int longestCommonSubsequence(std::string text1, std::string text2) {
  * std::string
  * no references used
  */
-int worst(
+int nomemo_nosv_noref(
         const std::string& text1,
         const std::string& text2,
         int i, int j, int n, int m,
