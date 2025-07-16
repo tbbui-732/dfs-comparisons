@@ -1,0 +1,8 @@
+# bins (files without extensions)
+*
+!*.*
+!*/
+!Makefile
+
+# vim
+*.swp
